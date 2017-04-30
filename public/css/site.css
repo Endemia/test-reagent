@@ -40,3 +40,60 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.teamCard {
+  height: 130px;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+.teamCardImg {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 50px;
+}
+
+.teamCardTitle {
+  font-weight: bold;
+  color: #000000;
+}
+
+.westConf .teamCard {
+  background-color: rgba(252, 208, 219, 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(199, 182, 187, 0.75);
+}
+
+.eastConf .teamCard {
+  background-color: rgba(204, 224, 238, 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(163, 192, 222, 0.75);
+}
+
+.westConf::after {
+  background-image: url("../img/west.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -10;
+}
+
+.eastConf::after {
+  background-image: url("../img/east.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -10;
+}
