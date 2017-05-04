@@ -1,4 +1,4 @@
-(defproject test-reagent "0.1.0-SNAPSHOT"
+(defproject main "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -7,8 +7,11 @@
   :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
                  [org.clojure/clojurescript "1.9.495" :scope "provided"]
                  [reagent "0.6.1"]
+                 [reagent-utils "0.2.1"]
                  [cljs-ajax "0.5.9"]
-                 [reagent-bootstrap/reagent-bootstrap "0.0.1"]]
+                 [reagent-bootstrap/reagent-bootstrap "0.0.1"]
+                 [secretary "1.2.3"]
+                 [venantius/accountant "0.2.0"]]
 
   :node-dependencies []
 
@@ -32,7 +35,7 @@
   :cljsbuild {:builds {:app
                        {:source-paths ["src" "env/dev/cljs"]
                         :compiler
-                        {:main "test-reagent.dev"
+                        {:main "main.dev"
                          :output-to "public/js/app.js"
                          :output-dir "public/js/out"
                          :asset-path   "js/out"

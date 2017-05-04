@@ -1,44 +1,24 @@
-(ns components.navbar)
+(ns components.navbar
+  (:require [state.state :as state :refer [conferences]]))
 
-(defn home []
+
+
+(defn teams []
+
   [:li
-   [:a {:href "#home"}
-    "Home"
-    ]
-   ]
-  )
-
-(defn action1 []
-  [:li
-   [:a {:href "#action1"} "Action1"]
-   ]
-  )
-
-(defn action2 []
-  [:li
-   [:a {:href "#action2"} "Action2"]
-   ]
-  )
-
-(defn actions []
-  [:li.dropdown
-   [:a.dropdown-toggle {:href "#", :data-toggle "dropdown"}
-    "Actions" [:span.caret]
-    ]
-   [:ul.dropdown-menu
-    [action1]
-    [action2]
+   [:a {:href "/teams"}
+    "Teams"
     ]
    ]
   )
 
 (defn navbar []
-  [:nav.navbar.navbar-inverse
+  [:nav.navbar.navbar-nba
    [:div.container-fluid
+    [:div.navbar-header [:a.navbar-nba-brand {:href "/"}]]
     [:div#bs-example-navbar-collapse-1.collapse.navbar-collapse
      [:ul.nav.navbar-nav
-      [home]
-      [actions]
+      [teams]
       ]
      ]
     ]

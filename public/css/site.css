@@ -9,12 +9,17 @@ body {
   line-height: 1.5em;
 }
 
+.mainContent {
+  position: relative;
+}
+
 #app {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: rgba(173, 172, 172, 0.35);
 }
 
 h1, h2, h3 {
@@ -42,32 +47,101 @@ a:hover {
 }
 
 .teamCard {
+  position: relative;
   height: 130px;
   padding: 4px;
-  margin: 4px;
+  margin: 14px 4px;
   border-radius: 5px;
+  border: 4px solid #fff;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 12px 8px -5px rgba(0, 0, 0, 0.85); /* FF3.5+ */
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #fff, 0 12px 8px -5px rgba(0, 0, 0, 0.65); /* Saf3.0+, Chrome */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 12px 8px -5px rgba(0, 0, 0, 0.85); /* Opera 10.5, IE 9.0 */
 }
 
 .teamCardImg {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  width: 50px;
+  position: relative;
+  margin : auto;
+  padding-top: 10px;
+  width: 90px;
+}
+
+.teamCardImg img {
+  width: 90px;
 }
 
 .teamCardTitle {
-  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 5px;
   color: #000000;
+  font-family: 'Fugaz One', cursive;
+}
+
+.teamCardIndex {
+  font-family: 'Fugaz One', cursive;
+  font-size: 40px;
+  position: absolute;
+  top: 25px;
+}
+
+.teamCardWL {
+  font-family: 'Fugaz One', cursive;
+  font-size: 22px;
+  position: absolute;
+  bottom: 0;
+  right: 5px;
 }
 
 .westConf .teamCard {
-  background-color: rgba(252, 208, 219, 0.5);
-  box-shadow: 2px 2px 5px 1px rgba(199, 182, 187, 0.75);
+  background-color: rgba(252, 208, 219, 0.2);
 }
 
 .eastConf .teamCard {
-  background-color: rgba(204, 224, 238, 0.5);
-  box-shadow: 2px 2px 5px 1px rgba(163, 192, 222, 0.75);
+  background-color: rgba(204, 224, 238, 0.2);
+}
+
+nav.navbar {
+  margin-bottom: 0;
+}
+nav.navbar-nba {
+  background-color: #006BB6;
+}
+nav.navbar-nba a {
+  color: #fff;
+}
+nav.navbar-nba a:hover, nav.navbar-nba a:focus {
+  color: #006BB6;
+}
+nav.navbar-nba .open>a {
+  color: #006BB6;
+}
+.navbar-nba-brand {
+  margin: 17px 5px 0 0;
+  display: inline-block;
+  background: url(../img/nav_logoman.svg) 0 0 no-repeat;
+  background-size: 100%;
+  width: 66px;
+  height: 28px
+}
+
+.homeSortButton {
+  position: relative;
+  left: 5px;
+  border-color: white;
+  width: 150px;
+  border-radius: 0 0 4px 4px;
+  border-style: solid;
+  border-width: 0 2px 2px 2px;
+  cursor: pointer;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 6px 7px -3px rgba(0, 0, 0, 0.85); /* FF3.5+ */
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #fff, 0 6px 7px -3px rgba(0, 0, 0, 0.65); /* Saf3.0+, Chrome */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 6px 7px -3px rgba(0, 0, 0, 0.85); /* Opera 10.5, IE 9.0 */
+}
+
+.homeSortButton i {
+  position: relative;
+  top: 3px;
+  right: -7px;
 }
 
 .westConf::after {
@@ -96,4 +170,36 @@ a:hover {
   right: 0;
   position: absolute;
   z-index: -10;
+}
+
+.teamList {
+  position: fixed;
+  top: 65px;
+  bottom: 0;
+  width: 220px;
+  overflow-y: auto;
+}
+
+.teamList img {
+  width: 30px;
+}
+
+.teamList.scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 4px;
+	background-color: #F5F5F5;
+}
+
+.teamList.scrollbar::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+.teamList.scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #006BB6;
 }
