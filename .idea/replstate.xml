@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ReplState" timestamp="1492359165537">{:repl-history {:ide [], :local [&quot;(for [x [1,2,3]] x) &quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1494697367800">{:repl-history {:ide [], :local [&quot;(for [x [1,2,3]] x) &quot; &quot;(take 2 [1,2,3,4])&quot; &quot;(take - 2 [1,2,3,4])&quot; &quot;(str \&quot;abc\&quot; \&quot;def\&quot;)&quot; &quot;(map #(get %1 \&quot;clef\&quot;) [{clef \&quot;key\&quot; val \&quot;val\&quot;}])&quot; &quot;(map #(get %1 \&quot;clef\&quot;) [{:clef \&quot;key\&quot; :val \&quot;val\&quot;}])&quot; &quot;(map #(get %1 :clef) [{:clef \&quot;key\&quot; :val \&quot;val\&quot;}])&quot; &quot;(map #(get %1 :clef) [{\&quot;clef\&quot; \&quot;key\&quot; \&quot;val\&quot; \&quot;val\&quot;}])&quot; &quot;(map #(get %1 \&quot;clef\&quot;) [{\&quot;clef\&quot; \&quot;key\&quot; \&quot;val\&quot; \&quot;val\&quot;}])&quot;], :remote []}}</component>
 </project>
