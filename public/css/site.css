@@ -8,100 +8,50 @@ body {
   color: #333;
   line-height: 1.5em;
 }
-
 .mainContent {
   position: relative;
 }
-
 #app {
   position: absolute;
-  top: 0;
+  top: 64px;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(173, 172, 172, 0.35);
+  overflow-y: auto;
 }
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #000;
 }
 h1 {
-  font-size: 2.5em
+  font-size: 2.5em;
 }
-
 h2 {
-  font-size: 2em
+  font-size: 2em;
 }
-
 h3 {
-  font-size: 1.5em
+  font-size: 1.5em;
 }
-
 a {
   text-decoration: none;
   color: #09f;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
-.teamCard {
-  position: relative;
-  height: 130px;
-  padding: 4px;
-  margin: 14px 4px;
-  border-radius: 5px;
-  border: 4px solid #fff;
-  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 12px 8px -5px rgba(0, 0, 0, 0.85); /* FF3.5+ */
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #fff, 0 12px 8px -5px rgba(0, 0, 0, 0.65); /* Saf3.0+, Chrome */
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 12px 8px -5px rgba(0, 0, 0, 0.85); /* Opera 10.5, IE 9.0 */
+.nav-pills.nav-pills-nba > li.active > a,
+.nav-pills.nav-pills-nba > li.active > a:hover,
+.nav-pills.nav-pills-nba > li.active > a:focus {
+  background-color: #006BB6;
 }
-
-.teamCardImg {
-  position: relative;
-  margin : auto;
-  padding-top: 10px;
-  width: 90px;
+.clickable {
+  cursor: pointer;
 }
-
-.teamCardImg img {
-  width: 90px;
-}
-
-.teamCardTitle {
-  position: absolute;
-  top: 0;
-  left: 5px;
-  color: #000000;
-  font-family: 'Fugaz One', cursive;
-}
-
-.teamCardIndex {
-  font-family: 'Fugaz One', cursive;
-  font-size: 40px;
-  position: absolute;
-  top: 25px;
-}
-
-.teamCardWL {
-  font-family: 'Fugaz One', cursive;
-  font-size: 22px;
-  position: absolute;
-  bottom: 0;
-  right: 5px;
-}
-
-.westConf .teamCard {
-  background-color: rgba(252, 208, 219, 0.2);
-}
-
-.eastConf .teamCard {
-  background-color: rgba(204, 224, 238, 0.2);
-}
-
 nav.navbar {
   margin-bottom: 0;
+  border-radius: 0px;
 }
 nav.navbar-nba {
   background-color: #006BB6;
@@ -109,41 +59,24 @@ nav.navbar-nba {
 nav.navbar-nba a {
   color: #fff;
 }
-nav.navbar-nba a:hover, nav.navbar-nba a:focus {
+nav.navbar-nba a:hover,
+nav.navbar-nba a:focus {
   color: #006BB6;
 }
-nav.navbar-nba .open>a {
+nav.navbar-nba .open > a {
   color: #006BB6;
 }
-.navbar-nba-brand {
+nav .navbar-nba-brand {
   margin: 17px 5px 0 0;
   display: inline-block;
   background: url(../img/nav_logoman.svg) 0 0 no-repeat;
   background-size: 100%;
   width: 66px;
-  height: 28px
+  height: 28px;
 }
-
-.homeSortButton {
-  position: relative;
-  left: 5px;
-  border-color: white;
-  width: 150px;
-  border-radius: 0 0 4px 4px;
-  border-style: solid;
-  border-width: 0 2px 2px 2px;
-  cursor: pointer;
-  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 6px 7px -3px rgba(0, 0, 0, 0.85); /* FF3.5+ */
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #fff, 0 6px 7px -3px rgba(0, 0, 0, 0.65); /* Saf3.0+, Chrome */
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #fff, 0 6px 7px -3px rgba(0, 0, 0, 0.85); /* Opera 10.5, IE 9.0 */
+.westConf .teamCard {
+  background-color: rgba(252, 208, 219, 0.2);
 }
-
-.homeSortButton i {
-  position: relative;
-  top: 3px;
-  right: -7px;
-}
-
 .westConf::after {
   background-image: url("../img/west.png");
   background-repeat: no-repeat;
@@ -157,7 +90,9 @@ nav.navbar-nba .open>a {
   position: absolute;
   z-index: -10;
 }
-
+.eastConf .teamCard {
+  background-color: rgba(204, 224, 238, 0.2);
+}
 .eastConf::after {
   background-image: url("../img/east.png");
   background-repeat: no-repeat;
@@ -171,35 +106,733 @@ nav.navbar-nba .open>a {
   position: absolute;
   z-index: -10;
 }
-
+.teamCard {
+  position: relative;
+  height: 130px;
+  padding: 4px;
+  margin: 14px 4px;
+  border-radius: 5px;
+  border: 4px solid #fff;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #ffffff, 0 12px 8px -5px rgba(0, 0, 0, 0.85);
+  /* FF3.5+ */
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #ffffff, 0 12px 8px -5px rgba(0, 0, 0, 0.65);
+  /* Saf3.0+, Chrome */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #ffffff, 0 12px 8px -5px rgba(0, 0, 0, 0.85);
+  /* Opera 10.5, IE 9.0 */
+  font-family: 'Fugaz One', cursive;
+}
+.teamCard .teamCardImg {
+  position: relative;
+  margin: auto;
+  padding-top: 15px;
+  width: 90px;
+}
+.teamCard .teamCardImg img {
+  width: 90px;
+}
+.teamCard .teamCardTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000000;
+  background-color: #ffffff;
+  margin: 0;
+  width: 100%;
+  padding: 0 5px;
+}
+.teamCard .teamCardIndex {
+  font-size: 40px;
+  position: absolute;
+  top: 25px;
+}
+.teamCard .teamCardWL {
+  font-size: 22px;
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+.playerCard {
+  position: relative;
+  height: 230px;
+  padding: 4px;
+  margin: 14px 4px;
+  border-radius: 5px;
+  border: 4px solid #fff;
+  background-color: rgba(204, 224, 238, 0.2);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #ffffff, 0 12px 8px -5px rgba(0, 0, 0, 0.85);
+  /* FF3.5+ */
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #ffffff, 0 12px 8px -5px rgba(0, 0, 0, 0.65);
+  /* Saf3.0+, Chrome */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #ffffff, 0 12px 8px -5px rgba(0, 0, 0, 0.85);
+  /* Opera 10.5, IE 9.0 */
+  font-family: 'Fugaz One', cursive;
+  color: #000000;
+  font-size: 15px;
+}
+.playerCard .photo {
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.playerCard .photo img {
+  margin: 0 0 0 -25%;
+}
+.playerCard .playerName {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  padding: 0 5px;
+  background-color: #ffffff;
+}
+.playerCard .playerNumber {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0 5px;
+}
+.playerCard .playerPosition {
+  font-family: 'Oswald', cursive;
+  font-weight: bold;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  margin: 0 5px;
+}
+.playerCard .height {
+  font-family: 'Oswald', cursive;
+  position: absolute;
+  top: 25px;
+}
+.playerCard .height .feets,
+.playerCard .height .inches {
+  font-weight: bold;
+}
+.playerCard .weight {
+  font-family: 'Oswald', cursive;
+  position: absolute;
+  top: 45px;
+}
+.playerCard .weight .lbs {
+  font-weight: bold;
+}
+.homeSortButton {
+  position: relative;
+  left: 5px;
+  border-color: white;
+  width: 150px;
+  border-radius: 0 0 4px 4px;
+  border-style: solid;
+  border-width: 0 2px 2px 2px;
+  cursor: pointer;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #ffffff, 0 6px 7px -3px rgba(0, 0, 0, 0.85);
+  /* FF3.5+ */
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 810px -68px #ffffff, 0 6px 7px -3px rgba(0, 0, 0, 0.65);
+  /* Saf3.0+, Chrome */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35), 0 85px 180px 0 #ffffff, 0 6px 7px -3px rgba(0, 0, 0, 0.85);
+  /* Opera 10.5, IE 9.0 */
+}
+.homeSortButton i {
+  position: relative;
+  top: 3px;
+  right: -7px;
+}
 .teamList {
   position: fixed;
-  top: 65px;
+  top: 64px;
   bottom: 0;
   width: 220px;
   overflow-y: auto;
 }
-
 .teamList img {
   width: 30px;
 }
-
-.teamList.scrollbar::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 4px;
-	background-color: #F5F5F5;
+.teamList.scrollbar::-webkit-scrollbar-track,
+.teamPage.scrollbar::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #006BB6;
 }
-
-.teamList.scrollbar::-webkit-scrollbar
-{
-	width: 8px;
-	background-color: #F5F5F5;
+.teamList.scrollbar::-webkit-scrollbar,
+.teamPage.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: #fff;
 }
-
-.teamList.scrollbar::-webkit-scrollbar-thumb
-{
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #006BB6;
+.teamList.scrollbar::-webkit-scrollbar-thumb,
+.teamPage.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+.teamPage {
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  left: 220px;
+  overflow-y: auto;
+  width: calc(100% - 220px);
+  font-family: 'Fugaz One', cursive;
+  color: #ffffff;
+  font-size: 20px;
+}
+.teamPage .teamTitle {
+  height: 170px;
+  display: flex;
+}
+.teamPage .teamTitle::before {
+  content: '';
+  display: block;
+  height: 170px;
+  position: absolute;
+  width: calc(100% - 220px);
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 850px;
+}
+.teamPage .teamTitle .teamFullName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.teamPage .teamTitle .city {
+  padding-left: 20px;
+  margin: 0;
+  padding: 0 20px;
+}
+.teamPage .teamTitle .team {
+  padding-left: 20px;
+  font-size: 30px;
+  margin: 0;
+  padding: 0 20px;
+}
+.teamPage .teamTitle .teamConfRank {
+  position: absolute;
+  right: 0px;
+  top: 57px;
+  width: 150px;
+  border-top: 1px white solid;
+  border-left: 1px white solid;
+}
+.teamPage .teamTitle .teamConfRank .header {
+  font-size: 12px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -7px;
+  color: #000000;
+  background-color: #ffffff;
+  height: 56px;
+}
+.teamPage .teamTitle .teamConfRank .header span {
+  margin: 3px;
+}
+.teamPage .teamTitle .teamConfRank .conf {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 15px;
+}
+.teamPage .teamTitle .teamConfRank .rank {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.teamPage .teamTitle .teamDivRank {
+  position: absolute;
+  right: 0px;
+  top: 113px;
+  width: 150px;
+  border-top: 1px white solid;
+  border-left: 1px white solid;
+}
+.teamPage .teamTitle .teamDivRank .header {
+  font-size: 12px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -7px;
+  color: #000000;
+  background-color: #ffffff;
+  height: 56px;
+}
+.teamPage .teamTitle .teamDivRank .header span {
+  margin: 6px;
+}
+.teamPage .teamTitle .teamDivRank .div {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 15px;
+}
+.teamPage .teamTitle .teamDivRank .rank {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.teamPage .teamStats {
+  border-top: 1px white solid;
+}
+.teamPage .stat {
+  display: inline-block;
+  padding: 0 20px;
+  border-right: 1px white solid;
+  text-align: right;
+}
+.teamPage .ppgRank,
+.teamPage .apgRank,
+.teamPage .rpgRank,
+.teamPage .opgRank {
+  font-size: 12px;
+}
+.teamPage .teamTitle.ATL {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #e21a37);
+  background: -moz-linear-gradient(to bottom, #006bb6, #e21a37);
+  background: -o-linear-gradient(to bottom, #006bb6, #e21a37);
+  background: -ms-linear-gradient(to bottom, #006bb6, #e21a37);
+  background: linear-gradient(to bottom, #006bb6, #e21a37);
+}
+.teamPage .teamTitle.ATL::before {
+  background-image: url("../img/ATL.svg");
+}
+.background.ATL {
+  background-color: #e21a37;
+  color: #ffffff;
+}
+.teamPage .teamTitle.BKN {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #000000);
+  background: -moz-linear-gradient(to bottom, #006bb6, #000000);
+  background: -o-linear-gradient(to bottom, #006bb6, #000000);
+  background: -ms-linear-gradient(to bottom, #006bb6, #000000);
+  background: linear-gradient(to bottom, #006bb6, #000000);
+}
+.teamPage .teamTitle.BKN::before {
+  background-image: url("../img/BKN.svg");
+}
+.background.BKN {
+  background-color: #000000;
+  color: #ffffff;
+}
+.teamPage .teamTitle.BOS {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #00611b);
+  background: -moz-linear-gradient(to bottom, #006bb6, #00611b);
+  background: -o-linear-gradient(to bottom, #006bb6, #00611b);
+  background: -ms-linear-gradient(to bottom, #006bb6, #00611b);
+  background: linear-gradient(to bottom, #006bb6, #00611b);
+}
+.teamPage .teamTitle.BOS::before {
+  background-image: url("../img/BOS.svg");
+}
+.background.BOS {
+  background-color: #00611b;
+  color: #ffffff;
+}
+.teamPage .teamTitle.CHA {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #00848e);
+  background: -moz-linear-gradient(to bottom, #006bb6, #00848e);
+  background: -o-linear-gradient(to bottom, #006bb6, #00848e);
+  background: -ms-linear-gradient(to bottom, #006bb6, #00848e);
+  background: linear-gradient(to bottom, #006bb6, #00848e);
+}
+.teamPage .teamTitle.CHA::before {
+  background-image: url("../img/CHA.svg");
+}
+.background.CHA {
+  background-color: #00848e;
+  color: #ffffff;
+}
+.teamPage .teamTitle.CHI {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #b00203);
+  background: -moz-linear-gradient(to bottom, #006bb6, #b00203);
+  background: -o-linear-gradient(to bottom, #006bb6, #b00203);
+  background: -ms-linear-gradient(to bottom, #006bb6, #b00203);
+  background: linear-gradient(to bottom, #006bb6, #b00203);
+}
+.teamPage .teamTitle.CHI::before {
+  background-image: url("../img/CHI.svg");
+}
+.background.CHI {
+  background-color: #b00203;
+  color: #ffffff;
+}
+.teamPage .teamTitle.CLE {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #860038);
+  background: -moz-linear-gradient(to bottom, #006bb6, #860038);
+  background: -o-linear-gradient(to bottom, #006bb6, #860038);
+  background: -ms-linear-gradient(to bottom, #006bb6, #860038);
+  background: linear-gradient(to bottom, #006bb6, #860038);
+}
+.teamPage .teamTitle.CLE::before {
+  background-image: url("../img/CLE.svg");
+}
+.background.CLE {
+  background-color: #860038;
+  color: #ffffff;
+}
+.teamPage .teamTitle.DAL {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #006bb6);
+  background: -moz-linear-gradient(to bottom, #006bb6, #006bb6);
+  background: -o-linear-gradient(to bottom, #006bb6, #006bb6);
+  background: -ms-linear-gradient(to bottom, #006bb6, #006bb6);
+  background: linear-gradient(to bottom, #006bb6, #006bb6);
+}
+.teamPage .teamTitle.DAL::before {
+  background-image: url("../img/DAL.svg");
+}
+.background.DAL {
+  background-color: #006bb6;
+  color: #ffffff;
+}
+.teamPage .teamTitle.DEN {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #feb927);
+  background: -moz-linear-gradient(to bottom, #006bb6, #feb927);
+  background: -o-linear-gradient(to bottom, #006bb6, #feb927);
+  background: -ms-linear-gradient(to bottom, #006bb6, #feb927);
+  background: linear-gradient(to bottom, #006bb6, #feb927);
+}
+.teamPage .teamTitle.DEN::before {
+  background-image: url("../img/DEN.svg");
+}
+.background.DEN {
+  background-color: #feb927;
+  color: #ffffff;
+}
+.teamPage .teamTitle.DET {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #fa002c);
+  background: -moz-linear-gradient(to bottom, #006bb6, #fa002c);
+  background: -o-linear-gradient(to bottom, #006bb6, #fa002c);
+  background: -ms-linear-gradient(to bottom, #006bb6, #fa002c);
+  background: linear-gradient(to bottom, #006bb6, #fa002c);
+}
+.teamPage .teamTitle.DET::before {
+  background-image: url("../img/DET.svg");
+}
+.background.DET {
+  background-color: #fa002c;
+  color: #ffffff;
+}
+.teamPage .teamTitle.GSW {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #003399);
+  background: -moz-linear-gradient(to bottom, #006bb6, #003399);
+  background: -o-linear-gradient(to bottom, #006bb6, #003399);
+  background: -ms-linear-gradient(to bottom, #006bb6, #003399);
+  background: linear-gradient(to bottom, #006bb6, #003399);
+}
+.teamPage .teamTitle.GSW::before {
+  background-image: url("../img/GSW.svg");
+}
+.background.GSW {
+  background-color: #003399;
+  color: #ffffff;
+}
+.teamPage .teamTitle.HOU {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #cd212b);
+  background: -moz-linear-gradient(to bottom, #006bb6, #cd212b);
+  background: -o-linear-gradient(to bottom, #006bb6, #cd212b);
+  background: -ms-linear-gradient(to bottom, #006bb6, #cd212b);
+  background: linear-gradient(to bottom, #006bb6, #cd212b);
+}
+.teamPage .teamTitle.HOU::before {
+  background-image: url("../img/HOU.svg");
+}
+.background.HOU {
+  background-color: #cd212b;
+  color: #ffffff;
+}
+.teamPage .teamTitle.IND {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #ffb517);
+  background: -moz-linear-gradient(to bottom, #006bb6, #ffb517);
+  background: -o-linear-gradient(to bottom, #006bb6, #ffb517);
+  background: -ms-linear-gradient(to bottom, #006bb6, #ffb517);
+  background: linear-gradient(to bottom, #006bb6, #ffb517);
+}
+.teamPage .teamTitle.IND::before {
+  background-image: url("../img/IND.svg");
+}
+.background.IND {
+  background-color: #ffb517;
+  color: #ffffff;
+}
+.teamPage .teamTitle.LAC {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #ed174b);
+  background: -moz-linear-gradient(to bottom, #006bb6, #ed174b);
+  background: -o-linear-gradient(to bottom, #006bb6, #ed174b);
+  background: -ms-linear-gradient(to bottom, #006bb6, #ed174b);
+  background: linear-gradient(to bottom, #006bb6, #ed174b);
+}
+.teamPage .teamTitle.LAC::before {
+  background-image: url("../img/LAC.svg");
+}
+.background.LAC {
+  background-color: #ed174b;
+  color: #ffffff;
+}
+.teamPage .teamTitle.LAL {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #fdba33);
+  background: -moz-linear-gradient(to bottom, #006bb6, #fdba33);
+  background: -o-linear-gradient(to bottom, #006bb6, #fdba33);
+  background: -ms-linear-gradient(to bottom, #006bb6, #fdba33);
+  background: linear-gradient(to bottom, #006bb6, #fdba33);
+}
+.teamPage .teamTitle.LAL::before {
+  background-image: url("../img/LAL.svg");
+}
+.background.LAL {
+  background-color: #fdba33;
+  color: #ffffff;
+}
+.teamPage .teamTitle.MEM {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #5d76a9);
+  background: -moz-linear-gradient(to bottom, #006bb6, #5d76a9);
+  background: -o-linear-gradient(to bottom, #006bb6, #5d76a9);
+  background: -ms-linear-gradient(to bottom, #006bb6, #5d76a9);
+  background: linear-gradient(to bottom, #006bb6, #5d76a9);
+}
+.teamPage .teamTitle.MEM::before {
+  background-image: url("../img/MEM.svg");
+}
+.background.MEM {
+  background-color: #5d76a9;
+  color: #ffffff;
+}
+.teamPage .teamTitle.MIA {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #98002e);
+  background: -moz-linear-gradient(to bottom, #006bb6, #98002e);
+  background: -o-linear-gradient(to bottom, #006bb6, #98002e);
+  background: -ms-linear-gradient(to bottom, #006bb6, #98002e);
+  background: linear-gradient(to bottom, #006bb6, #98002e);
+}
+.teamPage .teamTitle.MIA::before {
+  background-image: url("../img/MIA.svg");
+}
+.background.MIA {
+  background-color: #98002e;
+  color: #ffffff;
+}
+.teamPage .teamTitle.MIL {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #00471b);
+  background: -moz-linear-gradient(to bottom, #006bb6, #00471b);
+  background: -o-linear-gradient(to bottom, #006bb6, #00471b);
+  background: -ms-linear-gradient(to bottom, #006bb6, #00471b);
+  background: linear-gradient(to bottom, #006bb6, #00471b);
+}
+.teamPage .teamTitle.MIL::before {
+  background-image: url("../img/MIL.svg");
+}
+.background.MIL {
+  background-color: #00471b;
+  color: #ffffff;
+}
+.teamPage .teamTitle.MIN {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #2b6291);
+  background: -moz-linear-gradient(to bottom, #006bb6, #2b6291);
+  background: -o-linear-gradient(to bottom, #006bb6, #2b6291);
+  background: -ms-linear-gradient(to bottom, #006bb6, #2b6291);
+  background: linear-gradient(to bottom, #006bb6, #2b6291);
+}
+.teamPage .teamTitle.MIN::before {
+  background-image: url("../img/MIN.svg");
+}
+.background.MIN {
+  background-color: #2b6291;
+  color: #ffffff;
+}
+.teamPage .teamTitle.NOP {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #0c2340);
+  background: -moz-linear-gradient(to bottom, #006bb6, #0c2340);
+  background: -o-linear-gradient(to bottom, #006bb6, #0c2340);
+  background: -ms-linear-gradient(to bottom, #006bb6, #0c2340);
+  background: linear-gradient(to bottom, #006bb6, #0c2340);
+}
+.teamPage .teamTitle.NOP::before {
+  background-image: url("../img/NOP.svg");
+}
+.background.NOP {
+  background-color: #0c2340;
+  color: #ffffff;
+}
+.teamPage .teamTitle.NYK {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #f58426);
+  background: -moz-linear-gradient(to bottom, #006bb6, #f58426);
+  background: -o-linear-gradient(to bottom, #006bb6, #f58426);
+  background: -ms-linear-gradient(to bottom, #006bb6, #f58426);
+  background: linear-gradient(to bottom, #006bb6, #f58426);
+}
+.teamPage .teamTitle.NYK::before {
+  background-image: url("../img/NYK.svg");
+}
+.background.NYK {
+  background-color: #f58426;
+  color: #ffffff;
+}
+.teamPage .teamTitle.OKC {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #002d62);
+  background: -moz-linear-gradient(to bottom, #006bb6, #002d62);
+  background: -o-linear-gradient(to bottom, #006bb6, #002d62);
+  background: -ms-linear-gradient(to bottom, #006bb6, #002d62);
+  background: linear-gradient(to bottom, #006bb6, #002d62);
+}
+.teamPage .teamTitle.OKC::before {
+  background-image: url("../img/OKC.svg");
+}
+.background.OKC {
+  background-color: #002d62;
+  color: #ffffff;
+}
+.teamPage .teamTitle.ORL {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #0077c0);
+  background: -moz-linear-gradient(to bottom, #006bb6, #0077c0);
+  background: -o-linear-gradient(to bottom, #006bb6, #0077c0);
+  background: -ms-linear-gradient(to bottom, #006bb6, #0077c0);
+  background: linear-gradient(to bottom, #006bb6, #0077c0);
+}
+.teamPage .teamTitle.ORL::before {
+  background-image: url("../img/ORL.svg");
+}
+.background.ORL {
+  background-color: #0077c0;
+  color: #ffffff;
+}
+.teamPage .teamTitle.PHI {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #ef0022);
+  background: -moz-linear-gradient(to bottom, #006bb6, #ef0022);
+  background: -o-linear-gradient(to bottom, #006bb6, #ef0022);
+  background: -ms-linear-gradient(to bottom, #006bb6, #ef0022);
+  background: linear-gradient(to bottom, #006bb6, #ef0022);
+}
+.teamPage .teamTitle.PHI::before {
+  background-image: url("../img/PHI.svg");
+}
+.background.PHI {
+  background-color: #ef0022;
+  color: #ffffff;
+}
+.teamPage .teamTitle.PHX {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #e76221);
+  background: -moz-linear-gradient(to bottom, #006bb6, #e76221);
+  background: -o-linear-gradient(to bottom, #006bb6, #e76221);
+  background: -ms-linear-gradient(to bottom, #006bb6, #e76221);
+  background: linear-gradient(to bottom, #006bb6, #e76221);
+}
+.teamPage .teamTitle.PHX::before {
+  background-image: url("../img/PHX.svg");
+}
+.background.PHX {
+  background-color: #e76221;
+  color: #ffffff;
+}
+.teamPage .teamTitle.POR {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #cc0000);
+  background: -moz-linear-gradient(to bottom, #006bb6, #cc0000);
+  background: -o-linear-gradient(to bottom, #006bb6, #cc0000);
+  background: -ms-linear-gradient(to bottom, #006bb6, #cc0000);
+  background: linear-gradient(to bottom, #006bb6, #cc0000);
+}
+.teamPage .teamTitle.POR::before {
+  background-image: url("../img/POR.svg");
+}
+.background.POR {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+.teamPage .teamTitle.SAC {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #51388a);
+  background: -moz-linear-gradient(to bottom, #006bb6, #51388a);
+  background: -o-linear-gradient(to bottom, #006bb6, #51388a);
+  background: -ms-linear-gradient(to bottom, #006bb6, #51388a);
+  background: linear-gradient(to bottom, #006bb6, #51388a);
+}
+.teamPage .teamTitle.SAC::before {
+  background-image: url("../img/SAC.svg");
+}
+.background.SAC {
+  background-color: #51388a;
+  color: #ffffff;
+}
+.teamPage .teamTitle.SAS {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #959191);
+  background: -moz-linear-gradient(to bottom, #006bb6, #959191);
+  background: -o-linear-gradient(to bottom, #006bb6, #959191);
+  background: -ms-linear-gradient(to bottom, #006bb6, #959191);
+  background: linear-gradient(to bottom, #006bb6, #959191);
+}
+.teamPage .teamTitle.SAS::before {
+  background-image: url("../img/SAS.svg");
+}
+.background.SAS {
+  background-color: #959191;
+  color: #ffffff;
+}
+.teamPage .teamTitle.TOR {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #bd1b21);
+  background: -moz-linear-gradient(to bottom, #006bb6, #bd1b21);
+  background: -o-linear-gradient(to bottom, #006bb6, #bd1b21);
+  background: -ms-linear-gradient(to bottom, #006bb6, #bd1b21);
+  background: linear-gradient(to bottom, #006bb6, #bd1b21);
+}
+.teamPage .teamTitle.TOR::before {
+  background-image: url("../img/TOR.svg");
+}
+.background.TOR {
+  background-color: #bd1b21;
+  color: #ffffff;
+}
+.teamPage .teamTitle.UTA {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #f9a11e);
+  background: -moz-linear-gradient(to bottom, #006bb6, #f9a11e);
+  background: -o-linear-gradient(to bottom, #006bb6, #f9a11e);
+  background: -ms-linear-gradient(to bottom, #006bb6, #f9a11e);
+  background: linear-gradient(to bottom, #006bb6, #f9a11e);
+}
+.teamPage .teamTitle.UTA::before {
+  background-image: url("../img/UTA.svg");
+}
+.background.UTA {
+  background-color: #f9a11e;
+  color: #ffffff;
+}
+.teamPage .teamTitle.WAS {
+  background-color: #006bb6;
+  background: -webkit-linear-gradient(to bottom, #006bb6, #cf142b);
+  background: -moz-linear-gradient(to bottom, #006bb6, #cf142b);
+  background: -o-linear-gradient(to bottom, #006bb6, #cf142b);
+  background: -ms-linear-gradient(to bottom, #006bb6, #cf142b);
+  background: linear-gradient(to bottom, #006bb6, #cf142b);
+}
+.teamPage .teamTitle.WAS::before {
+  background-image: url("../img/WAS.svg");
+}
+.background.WAS {
+  background-color: #cf142b;
+  color: #ffffff;
 }
