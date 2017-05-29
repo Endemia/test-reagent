@@ -13,7 +13,7 @@
   )
 
 (defn navbar []
-  [:nav.navbar.navbar-nba
+  [:nav.navbar.navbar-nba.navbar-fixed-top
    [:div.container-fluid
     [:div.navbar-header [:a.navbar-nba-brand {:href "/"}]]
     [:div#bs-example-navbar-collapse-1.collapse.navbar-collapse
@@ -24,6 +24,3 @@
     ]
    ]
   )
-
-
-

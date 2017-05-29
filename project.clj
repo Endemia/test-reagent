@@ -15,8 +15,14 @@
 
   :node-dependencies []
 
-  :plugins [[lein-cljsbuild "1.1.5"]
+  :plugins [[lein-less "1.7.5"]
+            [lein-cljsbuild "1.1.5"]
             [lein-figwheel "0.5.9"]]
+
+  :less {:source-paths ["src/less/"]
+         :target-path "public/css/"}
+
+  :hooks [leiningen.less]
 
   :min-lein-version "2.5.0"
 
@@ -43,7 +49,7 @@
                          :optimizations :none
                          :pretty-print  true}
                         :figwheel
-                        {:open-urls ["http://localhost:3449/index.html"]}}
+                        {:open-urls ["http://localhost:3449/"]}}
                        :release
                        {:source-paths ["src" "env/prod/cljs"]
                         :compiler
