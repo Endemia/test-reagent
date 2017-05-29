@@ -12,6 +12,15 @@
    ]
   )
 
+(defn teamsStats []
+
+  [:li
+   [:a {:href "/teams/stats"}
+    "TeamsStats"
+    ]
+   ]
+  )
+
 (defn navbar []
   [:nav.navbar.navbar-nba.navbar-fixed-top
    [:div.container-fluid
@@ -19,6 +28,7 @@
     [:div#bs-example-navbar-collapse-1.collapse.navbar-collapse
      [:ul.nav.navbar-nav
       [teams]
+      [teamsStats]
       ]
      ]
     ]

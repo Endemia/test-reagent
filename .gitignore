@@ -11,3 +11,5 @@ profiles.clj
 /.repl
 *.log
 /.env
+**/.idea/workspace.xml
+**/.idea/tasks.xml

@@ -12,7 +12,7 @@
   [:div.col-sm-6.col-md-6.col-lg-4 {:key (team "abbreviation")}
    [:div.teamCard (if onclick {:class "clickable" :on-click #(onclick team)})
     [:div.teamCardImg
-     [:img {:src (str "img/" (team "abbreviation") ".svg")}]
+     [:img {:src (str "/img/" (team "abbreviation") ".svg")}]
      ]
     [:span.teamCardTitle (team "teamName") onclick]
     [:span.teamCardIndex (getStat team "confRank")]
