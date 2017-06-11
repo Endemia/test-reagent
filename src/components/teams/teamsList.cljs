@@ -12,7 +12,7 @@
           }
          (if (= (@teamsPage "selectedTeam") (team "abbreviation")) {:class "active"})
          )
-   [:a {:href "#"} [:img {:src (str "img/" (team "abbreviation") ".svg")}] (team "teamName")]
+   [:a {:href "#"} [:img {:src (str "/img/" (team "abbreviation") ".svg")}] (team "teamName")]
    ]
   )
 

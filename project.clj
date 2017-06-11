@@ -11,7 +11,10 @@
                  [cljs-ajax "0.5.9"]
                  [reagent-bootstrap/reagent-bootstrap "0.0.1"]
                  [secretary "1.2.3"]
-                 [venantius/accountant "0.2.0"]]
+                 [venantius/accountant "0.2.0"]
+                 [ring "1.5.1"]
+                 [ring/ring-defaults "0.2.1"]
+                 [compojure "1.5.0"]]
 
   :node-dependencies []
 
@@ -19,7 +22,7 @@
             [lein-cljsbuild "1.1.5"]
             [lein-figwheel "0.5.9"]]
 
-  :less {:source-paths ["src/less/"]
+  :less {:source-paths ["less/"]
          :target-path "public/css/"}
 
   :hooks [leiningen.less]

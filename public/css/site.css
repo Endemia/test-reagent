@@ -374,17 +374,88 @@ nav .navbar-nba-brand {
 .teamPage .teamStats {
   border-top: 1px white solid;
 }
-.teamPage .stat {
+.teamPage .teamStats .stat {
   display: inline-block;
   padding: 0 20px;
   border-right: 1px white solid;
   text-align: right;
 }
-.teamPage .ppgRank,
-.teamPage .apgRank,
-.teamPage .rpgRank,
-.teamPage .opgRank {
+.teamPage .teamStats .ppgRank,
+.teamPage .teamStats .apgRank,
+.teamPage .teamStats .rpgRank,
+.teamPage .teamStats .opgRank {
   font-size: 12px;
+}
+.teamPage .teamRoster {
+  margin: 0;
+}
+.teamPage .teamSplits {
+  margin: 0;
+  font-size: 12px;
+}
+.teamPage .teamSplits .groupSet {
+  margin: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.teamPage .teamSplits .groupSet .groupSetHeader {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.teamPage .teamSplits .groupSet .groupSetHeader.loading {
+  width: 10%;
+}
+.teamPage .teamSplits .groupSet .groupSetHeader.loading img {
+  height: 22px;
+}
+.teamPage .teamSplits .groupSet .groupSetHeader .groupSetItem {
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
+  background-color: #006BB6;
+  margin: 0 1px;
+  cursor: pointer;
+}
+.teamPage .teamSplits .groupSet .groupSetHeader .groupSetItem.split {
+  flex-grow: 2;
+}
+.teamPage .teamSplits .groupSet .groupSetHeader .groupSetItem.active {
+  background-color: #f56613;
+}
+.teamPage .teamSplits .groupSet .groupSetSplit {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.teamPage .teamSplits .groupSet .groupSetSplit:hover .groupSetItem {
+  background-color: rgba(0, 107, 182, 0.5);
+}
+.teamPage .teamSplits .groupSet .groupSetSplit:hover .groupSetItem.split {
+  background-color: #f56613;
+}
+.teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem {
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 1px;
+}
+.teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem.split {
+  flex-grow: 2;
+}
+.teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem.max {
+  color: #006bb6;
+}
+.teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem.active {
+  background-color: rgba(0, 107, 182, 0.5);
+}
+.teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem.active.max {
+  background-color: #f56613;
 }
 .teamPage .teamTitle.ATL {
   background-color: #006bb6;

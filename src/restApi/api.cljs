@@ -1,12 +1,28 @@
 (ns restApi.api
-  (:require [ajax.core :refer [GET POST]]))
+  (:require [ajax.core :refer [GET POST]]
+            [config.config :as config :refer [conf]]))
+
+(defn getUrlPrefix []
+  ((:apiActive conf) (:apiUrlPrefixes conf))
+  )
 
 (defn get-conferences [handler]
-  (GET "http://localhost:3000/conferences" {:handler         handler
+  (.log js/console ((:apiActive conf) (:apiUrlPrefixes conf)))
+  (GET (str (getUrlPrefix) "/conferences") {:handler         handler
                                             :response-format :json})
   )
 
 (defn get-team-roster [teamId handler]
-  (GET (str "http://localhost:3000/team/" teamId "/roster") {:handler         handler
+  (GET (str (getUrlPrefix) "/team/" teamId "/roster") {:handler         handler
                                                              :response-format :json})
+  )
+
+(defn get-team-splits
+  ([teamId handler finally]
+   (GET (str (getUrlPrefix) "/team/" teamId "/splits") {:handler         handler
+                                                              :response-format :json
+                                                              :finally         finally}))
+  ([teamId handler]
+   (get-team-splits teamId handler nil)
+    )
   )

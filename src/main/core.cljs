@@ -7,7 +7,7 @@
             [components.teams.teams :as teams]
             [components.navbar :as navbar]
             [restApi.api :as restApi]
-            [state.state :as state :refer [conferences]]))
+            [state.state :as state :refer [conferences teamsPage]]))
 
 (defn home []
   [home/team-list]
@@ -22,7 +22,7 @@
   )
 
 (defn current-page []
-  [:div [navbar/navbar] [:div.mainContent [(session/get :current-page)]] ]
+  [:div [navbar/navbar] [:div.mainContent [(session/get :current-page) ]] ]
   )
 
 (secretary/defroute "/" []
@@ -30,6 +30,12 @@
                     )
 
 (secretary/defroute "/teams" []
+                    (swap! teamsPage assoc "subView" "roster")
+                    (session/put! :current-page teams)
+                    )
+
+(secretary/defroute "/teams/stats" []
+                    (swap! teamsPage assoc "subView" "stats")
                     (session/put! :current-page teams)
                     )
 
