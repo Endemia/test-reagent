@@ -1,7 +1,6 @@
 (ns components.teams.teamRoster
   (:require [components.player_card.card :as player-card]
             [state.state :as state :refer [teamsPage]]
-            [restApi.api :as restApi]
             [clojure.string :as str]))
 
 (defn getPlayerLastname [player]
@@ -12,7 +11,11 @@
   (map player-card/card (sort-by getPlayerLastname (get-in @teamsPage ["roster" "commonTeamRoster"])))
   )
 
-(defn team-roster [team]
-  (restApi/get-team-roster (team "teamId") (fn [roster] (swap! teamsPage assoc "roster" roster)))
+(defn roster []
   [:div.row.teamRoster (getPlayerList)]
+  )
+
+(defn team-roster [team]
+  (state/loadRoster team)
+  [roster]
   )

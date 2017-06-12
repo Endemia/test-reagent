@@ -371,6 +371,78 @@ nav .navbar-nba-brand {
   top: 20px;
   left: 30px;
 }
+.teamPage .teamTitle .teamLastGame {
+  position: absolute;
+  right: 200px;
+  top: 57px;
+  border-top: 1px white solid;
+  border-left: 1px white solid;
+  border-right: 1px white solid;
+  height: 114px;
+  width: 300px;
+}
+.teamPage .teamTitle .teamLastGame .header {
+  font-size: 12px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -7px;
+  color: #000000;
+  background-color: #ffffff;
+  height: 113px;
+}
+.teamPage .teamTitle .teamLastGame .header span {
+  margin: 4px;
+}
+.teamPage .teamTitle .teamLastGame .game {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: calc(100% - 22px);
+  height: 100%;
+}
+.teamPage .teamTitle .teamLastGame .game .date {
+  font-size: 12px;
+  text-align: center;
+  font-family: 'Oswald', cursive;
+}
+.teamPage .teamTitle .teamLastGame .game .score {
+  position: absolute;
+  top: 40px;
+  left: 90px;
+  width: 96px;
+  text-align: center;
+}
+.teamPage .teamTitle .teamLastGame .game .score .visitor,
+.teamPage .teamTitle .teamLastGame .game .score .home {
+  display: inline-block;
+}
+.teamPage .teamTitle .teamLastGame .game .loading {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.teamPage .teamTitle .teamLastGame .game .loading .spacer {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.teamPage .teamTitle .teamLastGame .game .loading img {
+  width: 30px;
+  vertical-align: middle;
+}
+.teamPage .teamTitle .teamLastGame .game img {
+  width: 80px;
+}
+.teamPage .teamTitle .teamLastGame .game img.visitor {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.teamPage .teamTitle .teamLastGame .game img.home {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
 .teamPage .teamStats {
   border-top: 1px white solid;
 }
@@ -416,7 +488,7 @@ nav .navbar-nba-brand {
   flex-basis: 0;
   text-align: center;
   background-color: #006BB6;
-  margin: 0 1px;
+  border: 1px #e2e2e2 solid;
   cursor: pointer;
 }
 .teamPage .teamSplits .groupSet .groupSetHeader .groupSetItem.split {
@@ -443,7 +515,7 @@ nav .navbar-nba-brand {
   text-align: center;
   background-color: #ffffff;
   color: #000000;
-  margin: 1px;
+  border: 1px #e2e2e2 solid;
 }
 .teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem.split {
   flex-grow: 2;

@@ -21,13 +21,13 @@
 
 (defn page []
   [:div
-   (teamsList/team-list)
+   [teamsList/team-list]
    (let [selectedTeam (getSelectedTeam)]
      [:div.teamPage.scrollbar
-      (teamHeader/team-header selectedTeam)
+      [teamHeader/team-header selectedTeam]
       (case (@teamsPage "subView")
-        "roster" (teamRoster/team-roster selectedTeam)
-        (teamStats/team-stats selectedTeam)
+        "roster" [teamRoster/team-roster selectedTeam]
+        [teamStats/team-stats selectedTeam]
         )
       ]
      )
