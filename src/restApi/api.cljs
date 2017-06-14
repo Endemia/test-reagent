@@ -26,3 +26,8 @@
    (get-team-splits teamId handler nil)
     )
   )
+
+(defn get-team-last-game [teamId handler]
+  (GET (str (getUrlPrefix) "/team/" teamId "/lastGame") {:handler         handler
+                                                       :response-format :json})
+  )

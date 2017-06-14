@@ -1,5 +1,6 @@
 (ns components.teams.teamHeader
-  (:require [utils.numbers :as numbers]))
+  (:require [utils.numbers :as numbers]
+            [state.state :as state :refer [lastGame]]))
 
 (defn getStat [team stat]
   (-> team
@@ -25,47 +26,75 @@
   (numbers/countFromNumber (getInfo team info))
   )
 
-(defn team-header [team]
+(defn header [team]
   [:div
-    [:div.teamTitle {:class (team "abbreviation")}
-     [:img {:src (str "/img/" (team "abbreviation") ".svg")}]
+   [:div.teamTitle {:class (team "abbreviation")}
+    [:img {:src (str "/img/" (team "abbreviation") ".svg")}]
 
-     [:div.teamFullName
-      [:p.city (team "location")]
-      [:p.team (team "simpleName")]
+    [:div.teamFullName
+     [:p.city (team "location")]
+     [:p.team (team "simpleName")]
+     ]
+    [:div.teamConfRank
+     [:div.header
+      [:span "CONF"]
       ]
-     [:div.teamConfRank
-      [:div.header
-       [:span "CONF"]
-       ]
-      [:div.conf (getInfo team "teamConference")]
-      [:div.rank (getInfoRank team "confRank")]
+     [:div.conf (getInfo team "teamConference")]
+     [:div.rank (getInfoRank team "confRank")]
+     ]
+    [:div.teamDivRank
+     [:div.header
+      [:span "DIV"]
       ]
-     [:div.teamDivRank
-      [:div.header
-       [:span "DIV"]
-       ]
-      [:div.div (getInfo team "teamDivision")]
-      [:div.rank (getInfoRank team "divRank")]
+     [:div.div (getInfo team "teamDivision")]
+     [:div.rank (getInfoRank team "divRank")]
+     ]
+    [:div.teamLastGame
+     [:div.header
+      [:span "LAST GAME"]
+      ]
+     [:div.game
+      (if (@lastGame "LineScore")
+        [:div
+         [:img.visitor {:src (str "/img/" ((last (@lastGame "LineScore")) "teamAbbreviation") ".svg")}]
+         [:div.score
+          [:div.visitor ((last (@lastGame "LineScore")) "pts")]
+          " - "
+          [:div.home ((first (@lastGame "LineScore")) "pts")]
+          ]
+         [:div.date ((first (@lastGame "GameInfo")) "gameDate")]
+         [:img.home {:src (str "/img/" ((first (@lastGame "LineScore")) "teamAbbreviation") ".svg")}]
+         ]
+        [:div.loading
+         [:span.spacer]
+         [:img {:src (str "/img/loading-bars.svg")}]
+         ]
+        )
       ]
      ]
-    [:div.teamStats.background {:class (team "abbreviation")}
-     [:div.stat
-      [:div.ppg (getStat team "ptsPg") " PPG"]
-      [:div.ppgRank (getStatRank team "ptsRank")]
-      ]
-     [:div.stat
-      [:div.apg (getStat team "astPg") " APG"]
-      [:div.apgRank (getStatRank team "astRank")]
-      ]
-     [:div.stat
-      [:div.rpg (getStat team "rebPg") " RPG"]
-      [:div.rpgRank (getStatRank team "rebRank")]
-      ]
-     [:div.stat
-      [:div.opg (getStat team "oppPtsPg") " OPPG"]
-      [:div.opgRank (getStatRank team "oppPtsRank")]
-      ]
+    ]
+   [:div.teamStats.background {:class (team "abbreviation")}
+    [:div.stat
+     [:div.ppg (getStat team "ptsPg") " PPG"]
+     [:div.ppgRank (getStatRank team "ptsRank")]
      ]
+    [:div.stat
+     [:div.apg (getStat team "astPg") " APG"]
+     [:div.apgRank (getStatRank team "astRank")]
+     ]
+    [:div.stat
+     [:div.rpg (getStat team "rebPg") " RPG"]
+     [:div.rpgRank (getStatRank team "rebRank")]
+     ]
+    [:div.stat
+     [:div.opg (getStat team "oppPtsPg") " OPPG"]
+     [:div.opgRank (getStatRank team "oppPtsRank")]
+     ]
+    ]
    ]
+  )
+
+(defn team-header [team]
+  (state/loadLastGame team)
+  [header team]
   )

@@ -417,6 +417,91 @@ nav {
         left: 30px;
       }
     }
+
+    .teamLastGame {
+      position: absolute;
+      right: 200px;
+      top: 57px;
+      border-top: 1px white solid;
+      border-left: 1px white solid;
+      border-right: 1px white solid;
+      height: 114px;
+      width: 300px;
+
+      .header {
+        font-size: 12px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: -7px;
+        color: #000000;
+        background-color: #ffffff;
+        height: 113px;
+
+        span {
+          margin: 4px;
+        }
+      }
+
+      .game {
+        position: absolute;
+        top: 0;
+        left: 22px;
+        width: ~"calc(100% - 22px)";
+        height: 100%;
+
+        .date {
+          font-size: 12px;
+          text-align: center;
+          font-family: 'Oswald', cursive;
+        }
+
+        .score {
+          position: absolute;
+          top: 40px;
+          left: 90px;
+          width: 96px;
+          text-align: center;
+
+          .visitor, .home {
+            display: inline-block;
+          }
+        }
+
+        .loading {
+          height: 100%;
+          width: 100%;
+          text-align: center;
+
+          .spacer {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+          }
+
+          img {
+            width: 30px;
+            vertical-align: middle;
+          }
+        }
+
+        img {
+          width: 80px;
+
+          &.visitor {
+            position: absolute;
+            top: 20px;
+            left: 0;
+          }
+          &.home {
+            position: absolute;
+            top: 20px;
+            right: 0;
+          }
+
+        }
+      }
+
+    }
   }
 
   .teamStats {
@@ -467,7 +552,7 @@ nav {
           flex-basis: 0;
           text-align: center;
           background-color: #006BB6;
-          margin: 0 1px;
+          border: 1px #e2e2e2 solid;
           cursor: pointer;
 
           &.split {
@@ -502,7 +587,7 @@ nav {
           text-align: center;
           background-color: #ffffff;
           color: #000000;
-          margin: 1px;
+          border: 1px #e2e2e2 solid;
 
           &.split {
             flex-grow: 2;
