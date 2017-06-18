@@ -14,14 +14,14 @@
 
 (defn get-team-roster [teamId handler]
   (GET (str (getUrlPrefix) "/team/" teamId "/roster") {:handler         handler
-                                                             :response-format :json})
+                                                       :response-format :json})
   )
 
 (defn get-team-splits
   ([teamId handler finally]
    (GET (str (getUrlPrefix) "/team/" teamId "/splits") {:handler         handler
-                                                              :response-format :json
-                                                              :finally         finally}))
+                                                        :response-format :json
+                                                        :finally         finally}))
   ([teamId handler]
    (get-team-splits teamId handler nil)
     )
@@ -29,5 +29,15 @@
 
 (defn get-team-last-game [teamId handler]
   (GET (str (getUrlPrefix) "/team/" teamId "/lastGame") {:handler         handler
-                                                       :response-format :json})
+                                                         :response-format :json})
+  )
+
+(defn get-all-players [handler]
+  (GET (str (getUrlPrefix) "/players") {:handler         handler
+                                        :response-format :json})
+  )
+
+(defn get-player [playerId handler]
+  (GET (str (getUrlPrefix) "/player/" playerId) {:handler         handler
+                                                 :response-format :json})
   )

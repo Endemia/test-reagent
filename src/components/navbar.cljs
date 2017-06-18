@@ -1,10 +1,7 @@
 (ns components.navbar
   (:require [state.state :as state :refer [conferences]]))
 
-
-
 (defn teams []
-
   [:li
    [:a {:href "/teams"}
     "Teams"
@@ -13,10 +10,17 @@
   )
 
 (defn teamsStats []
-
   [:li
    [:a {:href "/teams/stats"}
     "TeamsStats"
+    ]
+   ]
+  )
+
+(defn players []
+  [:li
+   [:a {:href "/players"}
+    "Players"
     ]
    ]
   )
@@ -29,6 +33,7 @@
      [:ul.nav.navbar-nav
       [teams]
       [teamsStats]
+      [players]
       ]
      ]
     ]

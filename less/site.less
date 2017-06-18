@@ -269,7 +269,7 @@ nav {
 
 
 
-.teamList {
+.teamList, .playerList {
   position: fixed;
   top: 64px;
   bottom: 0;
@@ -282,7 +282,9 @@ nav {
 }
 
 .teamList.scrollbar::-webkit-scrollbar-track,
-.teamPage.scrollbar::-webkit-scrollbar-track
+.teamPage.scrollbar::-webkit-scrollbar-track,
+.playerList.scrollbar::-webkit-scrollbar-track,
+.playerPage.scrollbar::-webkit-scrollbar-track
 {
 
   border-radius: 0px;
@@ -290,14 +292,18 @@ nav {
 }
 
 .teamList.scrollbar::-webkit-scrollbar,
-.teamPage.scrollbar::-webkit-scrollbar
+.teamPage.scrollbar::-webkit-scrollbar,
+.playerList.scrollbar::-webkit-scrollbar,
+.playerPage.scrollbar::-webkit-scrollbar
 {
   width: 8px;
   background-color: #fff;
 }
 
 .teamList.scrollbar::-webkit-scrollbar-thumb,
-.teamPage.scrollbar::-webkit-scrollbar-thumb
+.teamPage.scrollbar::-webkit-scrollbar-thumb,
+.playerList.scrollbar::-webkit-scrollbar-thumb,
+.playerPage.scrollbar::-webkit-scrollbar-thumb
 {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
@@ -608,6 +614,61 @@ nav {
   }
 }
 
+.playerPage {
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  left: 220px;
+  overflow-y: auto;
+  width: ~"calc(100% - 220px)";
+  font-family: 'Fugaz One', cursive;
+  color: #ffffff;
+  font-size: 20px;
+
+  .playerTitle {
+    height: 170px;
+    display: flex;
+    position: relative;
+
+    &::before {
+      content:'';
+      display: block;
+      height: 170px;
+      position: absolute;
+      width: ~"calc(100% - 220px)";
+      opacity: 0.2;
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size: 850px;
+    }
+
+    .photo {
+      img {
+        height: 170px;
+      }
+    }
+
+    .playerFullName {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .firstname {
+        padding-left: 20px;
+        margin: 0;
+        padding: 0 20px;
+      }
+
+      .lastname {
+        padding-left: 20px;
+        font-size: 30px;
+        margin: 0;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
 @teamColor: ATL #e21a37, BKN #000000, BOS #00611b, CHA #00848e, CHI #b00203, CLE #860038, DAL #006bb6,
  DEN #feb927, DET #fa002c, GSW #003399, HOU #cd212b, IND #ffb517, LAC #ed174b, LAL #fdba33, MEM #5d76a9,
  MIA #98002e, MIL #00471b, MIN #2b6291, NOP #0c2340, NYK #f58426, OKC #002d62, ORL #0077c0, PHI #ef0022,
@@ -626,7 +687,8 @@ nav {
     @team: extract(extract(@teamColor, @it),1);
     @color: extract(extract(@teamColor, @it),2);
 
-    .teamPage .teamTitle.@{team} {
+    .teamPage .teamTitle.@{team},
+    .playerPage .playerTitle.@{team} {
         .gradient(to bottom, #006bb6, @color);
         &::before {
                background-image:url("../img/@{team}.svg");

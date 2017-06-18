@@ -241,28 +241,36 @@ nav .navbar-nba-brand {
   top: 3px;
   right: -7px;
 }
-.teamList {
+.teamList,
+.playerList {
   position: fixed;
   top: 64px;
   bottom: 0;
   width: 220px;
   overflow-y: auto;
 }
-.teamList img {
+.teamList img,
+.playerList img {
   width: 30px;
 }
 .teamList.scrollbar::-webkit-scrollbar-track,
-.teamPage.scrollbar::-webkit-scrollbar-track {
+.teamPage.scrollbar::-webkit-scrollbar-track,
+.playerList.scrollbar::-webkit-scrollbar-track,
+.playerPage.scrollbar::-webkit-scrollbar-track {
   border-radius: 0px;
   background-color: #006BB6;
 }
 .teamList.scrollbar::-webkit-scrollbar,
-.teamPage.scrollbar::-webkit-scrollbar {
+.teamPage.scrollbar::-webkit-scrollbar,
+.playerList.scrollbar::-webkit-scrollbar,
+.playerPage.scrollbar::-webkit-scrollbar {
   width: 8px;
   background-color: #fff;
 }
 .teamList.scrollbar::-webkit-scrollbar-thumb,
-.teamPage.scrollbar::-webkit-scrollbar-thumb {
+.teamPage.scrollbar::-webkit-scrollbar-thumb,
+.playerList.scrollbar::-webkit-scrollbar-thumb,
+.playerPage.scrollbar::-webkit-scrollbar-thumb {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
@@ -529,7 +537,54 @@ nav .navbar-nba-brand {
 .teamPage .teamSplits .groupSet .groupSetSplit .groupSetItem.active.max {
   background-color: #f56613;
 }
-.teamPage .teamTitle.ATL {
+.playerPage {
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  left: 220px;
+  overflow-y: auto;
+  width: calc(100% - 220px);
+  font-family: 'Fugaz One', cursive;
+  color: #ffffff;
+  font-size: 20px;
+}
+.playerPage .playerTitle {
+  height: 170px;
+  display: flex;
+  position: relative;
+}
+.playerPage .playerTitle::before {
+  content: '';
+  display: block;
+  height: 170px;
+  position: absolute;
+  width: calc(100% - 220px);
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 850px;
+}
+.playerPage .playerTitle .photo img {
+  height: 170px;
+}
+.playerPage .playerTitle .playerFullName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.playerPage .playerTitle .playerFullName .firstname {
+  padding-left: 20px;
+  margin: 0;
+  padding: 0 20px;
+}
+.playerPage .playerTitle .playerFullName .lastname {
+  padding-left: 20px;
+  font-size: 30px;
+  margin: 0;
+  padding: 0 20px;
+}
+.teamPage .teamTitle.ATL,
+.playerPage .playerTitle.ATL {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #e21a37);
   background: -moz-linear-gradient(to bottom, #006bb6, #e21a37);
@@ -537,14 +592,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #e21a37);
   background: linear-gradient(to bottom, #006bb6, #e21a37);
 }
-.teamPage .teamTitle.ATL::before {
+.teamPage .teamTitle.ATL::before,
+.playerPage .playerTitle.ATL::before {
   background-image: url("../img/ATL.svg");
 }
 .background.ATL {
   background-color: #e21a37;
   color: #ffffff;
 }
-.teamPage .teamTitle.BKN {
+.teamPage .teamTitle.BKN,
+.playerPage .playerTitle.BKN {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #000000);
   background: -moz-linear-gradient(to bottom, #006bb6, #000000);
@@ -552,14 +609,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #000000);
   background: linear-gradient(to bottom, #006bb6, #000000);
 }
-.teamPage .teamTitle.BKN::before {
+.teamPage .teamTitle.BKN::before,
+.playerPage .playerTitle.BKN::before {
   background-image: url("../img/BKN.svg");
 }
 .background.BKN {
   background-color: #000000;
   color: #ffffff;
 }
-.teamPage .teamTitle.BOS {
+.teamPage .teamTitle.BOS,
+.playerPage .playerTitle.BOS {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #00611b);
   background: -moz-linear-gradient(to bottom, #006bb6, #00611b);
@@ -567,14 +626,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #00611b);
   background: linear-gradient(to bottom, #006bb6, #00611b);
 }
-.teamPage .teamTitle.BOS::before {
+.teamPage .teamTitle.BOS::before,
+.playerPage .playerTitle.BOS::before {
   background-image: url("../img/BOS.svg");
 }
 .background.BOS {
   background-color: #00611b;
   color: #ffffff;
 }
-.teamPage .teamTitle.CHA {
+.teamPage .teamTitle.CHA,
+.playerPage .playerTitle.CHA {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #00848e);
   background: -moz-linear-gradient(to bottom, #006bb6, #00848e);
@@ -582,14 +643,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #00848e);
   background: linear-gradient(to bottom, #006bb6, #00848e);
 }
-.teamPage .teamTitle.CHA::before {
+.teamPage .teamTitle.CHA::before,
+.playerPage .playerTitle.CHA::before {
   background-image: url("../img/CHA.svg");
 }
 .background.CHA {
   background-color: #00848e;
   color: #ffffff;
 }
-.teamPage .teamTitle.CHI {
+.teamPage .teamTitle.CHI,
+.playerPage .playerTitle.CHI {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #b00203);
   background: -moz-linear-gradient(to bottom, #006bb6, #b00203);
@@ -597,14 +660,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #b00203);
   background: linear-gradient(to bottom, #006bb6, #b00203);
 }
-.teamPage .teamTitle.CHI::before {
+.teamPage .teamTitle.CHI::before,
+.playerPage .playerTitle.CHI::before {
   background-image: url("../img/CHI.svg");
 }
 .background.CHI {
   background-color: #b00203;
   color: #ffffff;
 }
-.teamPage .teamTitle.CLE {
+.teamPage .teamTitle.CLE,
+.playerPage .playerTitle.CLE {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #860038);
   background: -moz-linear-gradient(to bottom, #006bb6, #860038);
@@ -612,14 +677,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #860038);
   background: linear-gradient(to bottom, #006bb6, #860038);
 }
-.teamPage .teamTitle.CLE::before {
+.teamPage .teamTitle.CLE::before,
+.playerPage .playerTitle.CLE::before {
   background-image: url("../img/CLE.svg");
 }
 .background.CLE {
   background-color: #860038;
   color: #ffffff;
 }
-.teamPage .teamTitle.DAL {
+.teamPage .teamTitle.DAL,
+.playerPage .playerTitle.DAL {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #006bb6);
   background: -moz-linear-gradient(to bottom, #006bb6, #006bb6);
@@ -627,14 +694,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #006bb6);
   background: linear-gradient(to bottom, #006bb6, #006bb6);
 }
-.teamPage .teamTitle.DAL::before {
+.teamPage .teamTitle.DAL::before,
+.playerPage .playerTitle.DAL::before {
   background-image: url("../img/DAL.svg");
 }
 .background.DAL {
   background-color: #006bb6;
   color: #ffffff;
 }
-.teamPage .teamTitle.DEN {
+.teamPage .teamTitle.DEN,
+.playerPage .playerTitle.DEN {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #feb927);
   background: -moz-linear-gradient(to bottom, #006bb6, #feb927);
@@ -642,14 +711,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #feb927);
   background: linear-gradient(to bottom, #006bb6, #feb927);
 }
-.teamPage .teamTitle.DEN::before {
+.teamPage .teamTitle.DEN::before,
+.playerPage .playerTitle.DEN::before {
   background-image: url("../img/DEN.svg");
 }
 .background.DEN {
   background-color: #feb927;
   color: #ffffff;
 }
-.teamPage .teamTitle.DET {
+.teamPage .teamTitle.DET,
+.playerPage .playerTitle.DET {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #fa002c);
   background: -moz-linear-gradient(to bottom, #006bb6, #fa002c);
@@ -657,14 +728,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #fa002c);
   background: linear-gradient(to bottom, #006bb6, #fa002c);
 }
-.teamPage .teamTitle.DET::before {
+.teamPage .teamTitle.DET::before,
+.playerPage .playerTitle.DET::before {
   background-image: url("../img/DET.svg");
 }
 .background.DET {
   background-color: #fa002c;
   color: #ffffff;
 }
-.teamPage .teamTitle.GSW {
+.teamPage .teamTitle.GSW,
+.playerPage .playerTitle.GSW {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #003399);
   background: -moz-linear-gradient(to bottom, #006bb6, #003399);
@@ -672,14 +745,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #003399);
   background: linear-gradient(to bottom, #006bb6, #003399);
 }
-.teamPage .teamTitle.GSW::before {
+.teamPage .teamTitle.GSW::before,
+.playerPage .playerTitle.GSW::before {
   background-image: url("../img/GSW.svg");
 }
 .background.GSW {
   background-color: #003399;
   color: #ffffff;
 }
-.teamPage .teamTitle.HOU {
+.teamPage .teamTitle.HOU,
+.playerPage .playerTitle.HOU {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #cd212b);
   background: -moz-linear-gradient(to bottom, #006bb6, #cd212b);
@@ -687,14 +762,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #cd212b);
   background: linear-gradient(to bottom, #006bb6, #cd212b);
 }
-.teamPage .teamTitle.HOU::before {
+.teamPage .teamTitle.HOU::before,
+.playerPage .playerTitle.HOU::before {
   background-image: url("../img/HOU.svg");
 }
 .background.HOU {
   background-color: #cd212b;
   color: #ffffff;
 }
-.teamPage .teamTitle.IND {
+.teamPage .teamTitle.IND,
+.playerPage .playerTitle.IND {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #ffb517);
   background: -moz-linear-gradient(to bottom, #006bb6, #ffb517);
@@ -702,14 +779,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #ffb517);
   background: linear-gradient(to bottom, #006bb6, #ffb517);
 }
-.teamPage .teamTitle.IND::before {
+.teamPage .teamTitle.IND::before,
+.playerPage .playerTitle.IND::before {
   background-image: url("../img/IND.svg");
 }
 .background.IND {
   background-color: #ffb517;
   color: #ffffff;
 }
-.teamPage .teamTitle.LAC {
+.teamPage .teamTitle.LAC,
+.playerPage .playerTitle.LAC {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #ed174b);
   background: -moz-linear-gradient(to bottom, #006bb6, #ed174b);
@@ -717,14 +796,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #ed174b);
   background: linear-gradient(to bottom, #006bb6, #ed174b);
 }
-.teamPage .teamTitle.LAC::before {
+.teamPage .teamTitle.LAC::before,
+.playerPage .playerTitle.LAC::before {
   background-image: url("../img/LAC.svg");
 }
 .background.LAC {
   background-color: #ed174b;
   color: #ffffff;
 }
-.teamPage .teamTitle.LAL {
+.teamPage .teamTitle.LAL,
+.playerPage .playerTitle.LAL {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #fdba33);
   background: -moz-linear-gradient(to bottom, #006bb6, #fdba33);
@@ -732,14 +813,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #fdba33);
   background: linear-gradient(to bottom, #006bb6, #fdba33);
 }
-.teamPage .teamTitle.LAL::before {
+.teamPage .teamTitle.LAL::before,
+.playerPage .playerTitle.LAL::before {
   background-image: url("../img/LAL.svg");
 }
 .background.LAL {
   background-color: #fdba33;
   color: #ffffff;
 }
-.teamPage .teamTitle.MEM {
+.teamPage .teamTitle.MEM,
+.playerPage .playerTitle.MEM {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #5d76a9);
   background: -moz-linear-gradient(to bottom, #006bb6, #5d76a9);
@@ -747,14 +830,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #5d76a9);
   background: linear-gradient(to bottom, #006bb6, #5d76a9);
 }
-.teamPage .teamTitle.MEM::before {
+.teamPage .teamTitle.MEM::before,
+.playerPage .playerTitle.MEM::before {
   background-image: url("../img/MEM.svg");
 }
 .background.MEM {
   background-color: #5d76a9;
   color: #ffffff;
 }
-.teamPage .teamTitle.MIA {
+.teamPage .teamTitle.MIA,
+.playerPage .playerTitle.MIA {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #98002e);
   background: -moz-linear-gradient(to bottom, #006bb6, #98002e);
@@ -762,14 +847,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #98002e);
   background: linear-gradient(to bottom, #006bb6, #98002e);
 }
-.teamPage .teamTitle.MIA::before {
+.teamPage .teamTitle.MIA::before,
+.playerPage .playerTitle.MIA::before {
   background-image: url("../img/MIA.svg");
 }
 .background.MIA {
   background-color: #98002e;
   color: #ffffff;
 }
-.teamPage .teamTitle.MIL {
+.teamPage .teamTitle.MIL,
+.playerPage .playerTitle.MIL {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #00471b);
   background: -moz-linear-gradient(to bottom, #006bb6, #00471b);
@@ -777,14 +864,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #00471b);
   background: linear-gradient(to bottom, #006bb6, #00471b);
 }
-.teamPage .teamTitle.MIL::before {
+.teamPage .teamTitle.MIL::before,
+.playerPage .playerTitle.MIL::before {
   background-image: url("../img/MIL.svg");
 }
 .background.MIL {
   background-color: #00471b;
   color: #ffffff;
 }
-.teamPage .teamTitle.MIN {
+.teamPage .teamTitle.MIN,
+.playerPage .playerTitle.MIN {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #2b6291);
   background: -moz-linear-gradient(to bottom, #006bb6, #2b6291);
@@ -792,14 +881,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #2b6291);
   background: linear-gradient(to bottom, #006bb6, #2b6291);
 }
-.teamPage .teamTitle.MIN::before {
+.teamPage .teamTitle.MIN::before,
+.playerPage .playerTitle.MIN::before {
   background-image: url("../img/MIN.svg");
 }
 .background.MIN {
   background-color: #2b6291;
   color: #ffffff;
 }
-.teamPage .teamTitle.NOP {
+.teamPage .teamTitle.NOP,
+.playerPage .playerTitle.NOP {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #0c2340);
   background: -moz-linear-gradient(to bottom, #006bb6, #0c2340);
@@ -807,14 +898,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #0c2340);
   background: linear-gradient(to bottom, #006bb6, #0c2340);
 }
-.teamPage .teamTitle.NOP::before {
+.teamPage .teamTitle.NOP::before,
+.playerPage .playerTitle.NOP::before {
   background-image: url("../img/NOP.svg");
 }
 .background.NOP {
   background-color: #0c2340;
   color: #ffffff;
 }
-.teamPage .teamTitle.NYK {
+.teamPage .teamTitle.NYK,
+.playerPage .playerTitle.NYK {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #f58426);
   background: -moz-linear-gradient(to bottom, #006bb6, #f58426);
@@ -822,14 +915,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #f58426);
   background: linear-gradient(to bottom, #006bb6, #f58426);
 }
-.teamPage .teamTitle.NYK::before {
+.teamPage .teamTitle.NYK::before,
+.playerPage .playerTitle.NYK::before {
   background-image: url("../img/NYK.svg");
 }
 .background.NYK {
   background-color: #f58426;
   color: #ffffff;
 }
-.teamPage .teamTitle.OKC {
+.teamPage .teamTitle.OKC,
+.playerPage .playerTitle.OKC {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #002d62);
   background: -moz-linear-gradient(to bottom, #006bb6, #002d62);
@@ -837,14 +932,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #002d62);
   background: linear-gradient(to bottom, #006bb6, #002d62);
 }
-.teamPage .teamTitle.OKC::before {
+.teamPage .teamTitle.OKC::before,
+.playerPage .playerTitle.OKC::before {
   background-image: url("../img/OKC.svg");
 }
 .background.OKC {
   background-color: #002d62;
   color: #ffffff;
 }
-.teamPage .teamTitle.ORL {
+.teamPage .teamTitle.ORL,
+.playerPage .playerTitle.ORL {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #0077c0);
   background: -moz-linear-gradient(to bottom, #006bb6, #0077c0);
@@ -852,14 +949,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #0077c0);
   background: linear-gradient(to bottom, #006bb6, #0077c0);
 }
-.teamPage .teamTitle.ORL::before {
+.teamPage .teamTitle.ORL::before,
+.playerPage .playerTitle.ORL::before {
   background-image: url("../img/ORL.svg");
 }
 .background.ORL {
   background-color: #0077c0;
   color: #ffffff;
 }
-.teamPage .teamTitle.PHI {
+.teamPage .teamTitle.PHI,
+.playerPage .playerTitle.PHI {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #ef0022);
   background: -moz-linear-gradient(to bottom, #006bb6, #ef0022);
@@ -867,14 +966,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #ef0022);
   background: linear-gradient(to bottom, #006bb6, #ef0022);
 }
-.teamPage .teamTitle.PHI::before {
+.teamPage .teamTitle.PHI::before,
+.playerPage .playerTitle.PHI::before {
   background-image: url("../img/PHI.svg");
 }
 .background.PHI {
   background-color: #ef0022;
   color: #ffffff;
 }
-.teamPage .teamTitle.PHX {
+.teamPage .teamTitle.PHX,
+.playerPage .playerTitle.PHX {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #e76221);
   background: -moz-linear-gradient(to bottom, #006bb6, #e76221);
@@ -882,14 +983,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #e76221);
   background: linear-gradient(to bottom, #006bb6, #e76221);
 }
-.teamPage .teamTitle.PHX::before {
+.teamPage .teamTitle.PHX::before,
+.playerPage .playerTitle.PHX::before {
   background-image: url("../img/PHX.svg");
 }
 .background.PHX {
   background-color: #e76221;
   color: #ffffff;
 }
-.teamPage .teamTitle.POR {
+.teamPage .teamTitle.POR,
+.playerPage .playerTitle.POR {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #cc0000);
   background: -moz-linear-gradient(to bottom, #006bb6, #cc0000);
@@ -897,14 +1000,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #cc0000);
   background: linear-gradient(to bottom, #006bb6, #cc0000);
 }
-.teamPage .teamTitle.POR::before {
+.teamPage .teamTitle.POR::before,
+.playerPage .playerTitle.POR::before {
   background-image: url("../img/POR.svg");
 }
 .background.POR {
   background-color: #cc0000;
   color: #ffffff;
 }
-.teamPage .teamTitle.SAC {
+.teamPage .teamTitle.SAC,
+.playerPage .playerTitle.SAC {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #51388a);
   background: -moz-linear-gradient(to bottom, #006bb6, #51388a);
@@ -912,14 +1017,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #51388a);
   background: linear-gradient(to bottom, #006bb6, #51388a);
 }
-.teamPage .teamTitle.SAC::before {
+.teamPage .teamTitle.SAC::before,
+.playerPage .playerTitle.SAC::before {
   background-image: url("../img/SAC.svg");
 }
 .background.SAC {
   background-color: #51388a;
   color: #ffffff;
 }
-.teamPage .teamTitle.SAS {
+.teamPage .teamTitle.SAS,
+.playerPage .playerTitle.SAS {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #959191);
   background: -moz-linear-gradient(to bottom, #006bb6, #959191);
@@ -927,14 +1034,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #959191);
   background: linear-gradient(to bottom, #006bb6, #959191);
 }
-.teamPage .teamTitle.SAS::before {
+.teamPage .teamTitle.SAS::before,
+.playerPage .playerTitle.SAS::before {
   background-image: url("../img/SAS.svg");
 }
 .background.SAS {
   background-color: #959191;
   color: #ffffff;
 }
-.teamPage .teamTitle.TOR {
+.teamPage .teamTitle.TOR,
+.playerPage .playerTitle.TOR {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #bd1b21);
   background: -moz-linear-gradient(to bottom, #006bb6, #bd1b21);
@@ -942,14 +1051,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #bd1b21);
   background: linear-gradient(to bottom, #006bb6, #bd1b21);
 }
-.teamPage .teamTitle.TOR::before {
+.teamPage .teamTitle.TOR::before,
+.playerPage .playerTitle.TOR::before {
   background-image: url("../img/TOR.svg");
 }
 .background.TOR {
   background-color: #bd1b21;
   color: #ffffff;
 }
-.teamPage .teamTitle.UTA {
+.teamPage .teamTitle.UTA,
+.playerPage .playerTitle.UTA {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #f9a11e);
   background: -moz-linear-gradient(to bottom, #006bb6, #f9a11e);
@@ -957,14 +1068,16 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #f9a11e);
   background: linear-gradient(to bottom, #006bb6, #f9a11e);
 }
-.teamPage .teamTitle.UTA::before {
+.teamPage .teamTitle.UTA::before,
+.playerPage .playerTitle.UTA::before {
   background-image: url("../img/UTA.svg");
 }
 .background.UTA {
   background-color: #f9a11e;
   color: #ffffff;
 }
-.teamPage .teamTitle.WAS {
+.teamPage .teamTitle.WAS,
+.playerPage .playerTitle.WAS {
   background-color: #006bb6;
   background: -webkit-linear-gradient(to bottom, #006bb6, #cf142b);
   background: -moz-linear-gradient(to bottom, #006bb6, #cf142b);
@@ -972,7 +1085,8 @@ nav .navbar-nba-brand {
   background: -ms-linear-gradient(to bottom, #006bb6, #cf142b);
   background: linear-gradient(to bottom, #006bb6, #cf142b);
 }
-.teamPage .teamTitle.WAS::before {
+.teamPage .teamTitle.WAS::before,
+.playerPage .playerTitle.WAS::before {
   background-image: url("../img/WAS.svg");
 }
 .background.WAS {

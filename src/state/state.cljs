@@ -14,6 +14,11 @@
                                    }
                      :splits      {}
                      :last-game   {}
+                     :players     {}
+                     :playersPage {
+                                   :selectedPlayer 203518
+                                   :playerInfo     nil
+                                   }
                      }
                     ))
 
@@ -22,6 +27,12 @@
 (defonce teamsPage (reagent/cursor appState [:teamsPage]))
 (defonce splits (reagent/cursor appState [:splits]))
 (defonce lastGame (reagent/cursor appState [:last-game]))
+(defonce players (reagent/cursor appState [:players]))
+(defonce playersPage (reagent/cursor appState [:playersPage]))
+
+(defn loadAllPlayers []
+  (restApi/get-all-players (fn [players] (swap! appState assoc :players players)))
+  )
 
 (defn loadSplits [team]
   (swap! appState assoc :splits {})
@@ -37,4 +48,9 @@
 
 (defn loadRoster [team]
   (restApi/get-team-roster (team "teamId") (fn [roster] (swap! teamsPage assoc "roster" roster)))
+  )
+
+(defn loadPlayer [playerId]
+  (restApi/get-player playerId
+                      (fn [playerInfo] (swap! playersPage assoc :playerInfo playerInfo)))
   )

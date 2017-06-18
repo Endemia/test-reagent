@@ -5,6 +5,7 @@
             [accountant.core :as accountant]
             [components.home.home :as home]
             [components.teams.teams :as teams]
+            [components.players.players :as players]
             [components.navbar :as navbar]
             [restApi.api :as restApi]
             [state.state :as state :refer [conferences teamsPage]]))
@@ -15,6 +16,10 @@
 
 (defn teams []
   [teams/page]
+  )
+
+(defn players []
+  [players/page]
   )
 
 (defn load-conferences []
@@ -37,6 +42,10 @@
 (secretary/defroute "/teams/stats" []
                     (swap! teamsPage assoc "subView" "stats")
                     (session/put! :current-page teams)
+                    )
+
+(secretary/defroute "/players" []
+                    (session/put! :current-page players)
                     )
 
 ;; -------------------------
